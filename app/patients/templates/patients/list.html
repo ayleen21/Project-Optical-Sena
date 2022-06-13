@@ -1,0 +1,35 @@
+{% extends 'list.html' %}
+
+{% block columns %}
+    <tr>
+        <th scope="col" style="width: 5%;">#</th>
+        <th scope="col" style="width: 13%;">NIT/DNI</th>
+        <th scope="col" style="width: 17%;" >Nombre Paciente</th>
+        <th scope="col" style="width: 10%;">Telefono</th>
+        <th scope="col" style="width: 10%;">Genero</th>
+        <th scope="col" style="width: 10%;">Estrato</th>
+        <th scope="col" style="width: 23%;">Opciones</th>
+
+    </tr>
+{% endblock %}
+
+{% block rows %}
+    {% for p in object_list %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.pac_nit }}</td>
+            <td>{{ p.names}}</td>
+            <td>{{ p.pac_telefono }}</td>
+            <td>{{ p.gen_nombre}}</td>
+            <td>{{ p.estr_nombre }}</td>
+            <td>
+                <button type="button" class="btn btn-info btn-sm"><i class="fas fa-plus"></i> Crear Historia</button>
+                <button type="button" class="btn btn-warning  btn-sm"><i class="fas fa-edit"></i>Editar</button>
+                <button type="button" class="btn btn-danger  btn-sm"><i class="fas fa-trash"></i>Anular</button>
+
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+
+

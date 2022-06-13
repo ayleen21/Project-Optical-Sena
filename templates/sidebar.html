@@ -1,0 +1,62 @@
+{% load static %}
+<aside class="main-sidebar sidebar-light-primary elevation-4">
+    <a href="#" class="brand-link">
+        <img src="{% static 'img/logo_small.png' %}"
+             alt="AdminLTE Logo" width="150" style="margin-top: 5px;">
+        <span class="brand-text font-weight-light">
+            <img src="{% static 'img/logo_small.png' %}" width="180" style="margin-left: -155px;">
+        </span>
+    </a>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{% static 'img/avatar.jpg' %}" class="img-circle" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="" class="d-block">{{ request.user.username }}</a>
+            </div>
+        </div>
+        
+        <nav class="mt-2">
+            <ul class="dropdown nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li>
+                    <a href="#" class="nav-link button-dropdown">
+                        <p>
+                            <i class="nav-icon fas fa-users"></i>
+                            Pacientes
+                        </p>
+                    </a>
+                
+                    <ul class="dropdown " style="list-style-type: none;" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            {% comment %} <a href="{% url 'erp:client_list' %}" class="nav-link">       {% endcomment %}
+                                <p>
+                                    <i class="nav-icon fas fa-user"></i>
+                                    Listado de Pacientes
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            {% comment %} <a href="{% url 'erp:headquarters_list' %}" class="nav-link"> {% endcomment %}
+                                <p>
+                                    <i class="nav-icon fas fa-globe"></i>
+                                   Historias Clinicas
+                                </p>
+                            </a>
+                        </li>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</aside>
+
+<script>
+    $(function() {
+      $('.button-dropdown').click(function() {
+
+        $(this).siblings('.dropdown').toggle("swing");
+
+      });
+    });
+  </script>
